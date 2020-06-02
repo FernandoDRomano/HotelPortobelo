@@ -1,0 +1,1186 @@
+/*
+    CONFIGURACIÓN GLOBAL
+*/
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6, textarea, input, select, button{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a:visited, a:hover, a:active, a:focus, a:link{
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    overflow-x: hidden;
+    position: relative;
+}
+
+/*
+    ESTILOS A LA FLECHA DEL SCROLL UP
+*/
+
+#scrollUp{
+    display: none;
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: black;
+    z-index: 15;
+    background-image: url(../img/flecha.jpg);
+    transition: all .3s ease;
+}
+
+/*
+    ESTILOS A .cabezera
+*/
+
+.cabezera{
+    position: fixed;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    z-index: 10;
+    .contenedor{
+        .fas{
+            font-size: 25px;
+        }
+        .botonMenu i{
+            font-size: 38px;
+            color: #B5A99B;
+        }
+        .campanaReserva{
+            .campana{
+                position: relative;
+                color: #847059;
+            }
+            .flechaCampana{
+                color: #236AA1;
+                transform: rotateZ(180deg);
+            }
+            transition: all .3s ease;
+            .efectoFlecha{
+                transform: rotateZ(360deg);
+            }
+        }
+        .loginRegister i{
+            color: #DFDAD4;
+        }
+        .idiomas{
+            border: 1px solid #17A2B8;
+            span{
+                cursor: pointer;
+            }
+            #idiomaEsp{
+                background-color: #17A2B8;
+                color: #fff;
+            }
+        }
+    }
+}
+
+/*
+    ESTILOS A .menuDeNavegacion
+*/
+
+.menuDeNavegacion{
+    background-color: #000000;
+    z-index: 2;
+    color: #fff;
+    opacity: 0;
+    display: none;
+    position: fixed;
+    top: 55px;
+    transition: all .3s ease-in-out;
+    .nav{
+        .nav-item:hover{
+            background-color: #197DB1;
+        }
+    }
+    
+
+}
+
+/*
+    ESTILOS A .menuDeNavegacionMovil
+*/
+
+.menuDeNavegacionMovil{
+    background-color: rgba(0,0,0, .7);
+    width: 100%;
+    position: fixed;
+    top:40px;
+    overflow-y: scroll;
+    height: 90%;
+    display: none;
+    z-index: 3;
+    transition: all .3s ease-in-out;
+    .contenedor{
+        .fas{
+            font-size: 27px;
+        }
+        .loginRegister i{
+            color: #DFDAD4;
+            
+        }
+        .idiomas{
+            border: 1px solid #17A2B8;
+            span{
+                cursor: pointer;
+            }
+            #idiomaIngMovil{
+                background-color: #fff;
+                color: #000;
+            }
+            #idiomaEspMovil{
+                background-color: #17A2B8;
+                color: #fff;
+            }
+        }
+    }
+
+    .reserva{
+        background: rgba(0, 83, 147, .8);
+        padding: .7rem 2rem;
+    }
+    
+    .bg-negro{
+        background-color: #000000;
+    }
+    
+    .input-group-campo{
+        margin-bottom: 0;
+        cursor: pointer;
+    }
+    
+    .picker__select--month, .picker__select--year {
+        height: 2.5em;
+        padding: .5em;
+        width: 40%;
+    }
+    
+    .picker__nav--next:hover, .picker__nav--prev:hover {
+        cursor: pointer;
+        color: #000;
+        background:transparent;
+    }
+    .picker--focused .picker__day--selected, .picker__day--selected, .picker__day--selected:hover {
+        background: rgba(0, 83, 147, .8);
+    }
+    
+}
+
+/*
+    ESTILOS A .bloqueReserva
+*/
+
+.bloqueReserva{
+    display: block;
+    opacity: 1;
+    background: rgba(0, 83, 147, .8);
+    z-index: 2;
+    position: absolute;
+    top: 47px;
+    right: 0;
+    width: 375px;
+    height: auto;
+    padding: 0 .7rem;
+    transition: all .3s ease-in-out;
+}
+
+.bg-negro{
+    background-color: #000000;
+}
+
+.input-group-campo{
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.picker__select--month, .picker__select--year {
+    height: 2.5em;
+    padding: .5em;
+    width: 40%;
+}
+
+.picker__nav--next:hover, .picker__nav--prev:hover {
+    cursor: pointer;
+    color: #000;
+    background:transparent;
+}
+.picker--focused .picker__day--selected, .picker__day--selected, .picker__day--selected:hover {
+    background: rgba(0, 83, 147, .8);
+}
+
+/*
+    ESTILOS A .loginRegister
+*/
+
+#modalLoginRegister{
+    .modal-content{
+        z-index: 10;
+    }
+    .botonesRedes{
+        .boton{
+            display: block;
+            width: 100%;
+            padding: .6rem 0;
+            border-radius: .5rem;
+            color: white;
+            text-align: center;
+        }
+        .botonFacebook{
+            background-color: #007BFF;
+        }
+        .botonGoogle{
+            background-color: #DC3545;
+        }
+    }
+    .bloqueFooterLogin{
+        display: none;
+    }
+    .formularioRegisterGrande{
+        display: none;
+    }
+}
+
+/*
+    ESTILOS A . sliderDeImagenes
+*/
+
+.sliderDeImagenes{
+    position: relative;
+    .swiper-slide img{
+        width: 100%;
+        height: 45rem;
+    }
+}
+
+.verMas{
+    position: absolute;
+    bottom: 7%;
+    left: 50%;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 10;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i{
+        font-size: 30px;
+        color: black;
+        text-align: center;
+    }
+}
+
+/*
+    ESTILOS A .redesSocialesMovil
+*/
+
+.redesSocialesMovil{
+    background-color: #197DB1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 4;
+}
+
+/*
+    ESTILOS A .planes
+*/
+
+.planes{
+    .titulo{
+        font-size: 40px;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .contenido{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        transition: all .5s ease;
+        &::before{
+            content: '';
+            background-color: rgba(0,0,0, .7);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+        h2{
+            z-index: 2;
+        }
+    }
+    .item{
+        overflow: hidden;
+        transition: all .3s ease;
+        cursor: pointer;
+    }
+    .descripcion{
+        grid-area: texto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+    }
+    .item2{
+        grid-area: romantico;
+        background-image: url(../img/plan-romantico.png);
+        background-position: center;
+        background-size: cover;
+    }
+    .item3{
+        grid-area: lunaDeMiel;
+        background-image: url(../img/luna-de-miel.png);
+        background-position: center;
+        background-size: cover;
+    }
+    .item4{
+        grid-area: aventura;
+        background-image: url(../img/plan-aventura.png);
+        background-position: center;
+        background-size: cover;
+    }
+    .item5{
+        grid-area: spa;
+        background-image: url(../img/plan-spa.png);
+        background-position: center;
+        background-size: cover;
+    }
+    .contenedor{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 300px 300px;
+        grid-template-areas: 
+            "texto texto texto romantico romantico romantico"
+            "lunaDeMiel lunaDeMiel aventura aventura spa spa";
+    }
+}
+
+/*
+    ESTILOS A .habitaciones
+*/
+.tituloSeccion{
+    font-size: 2.5rem;
+}
+
+
+.habitacion{
+    overflow: hidden;
+    .imagen{
+        position: relative;
+        transition: .7s ease-in-out all;
+        &:hover{
+            transform: scale(1.1);
+        }
+        .tipo{
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.8rem 2.5rem;
+            background-color: #DC3545;
+            transition: all .3s ease;
+            h3{
+                font-size: 1.4rem;
+                color: #fff;
+            }
+        }
+        .suite{
+            background-color: #847059;
+            &:hover{
+                background-color: #7B8FA6;
+                h3{
+                    color: black;
+                    font-weight: bold;
+                }
+            }
+        }
+        .especial{
+            background-color: #197DB1;
+            &:hover{
+                background-color: #E6824E;
+                h3{
+                    color: black;
+                    font-weight: bold;
+                }
+            }
+        }
+        .standar{
+            background-color: #2F7D84;
+            &:hover{
+                background-color: #D0827B;
+                h3{
+                    color: black;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .descripcion{
+        background-color: #000;
+        color: rgba(white, .5);
+        font-size: .8rem;
+        padding: 1.4rem 0rem;
+        text-align: center;
+    }
+    .precio{
+        background-color: #FFD185;
+        padding: .7rem;
+        text-align: center;
+    }
+    .footer{
+        color: #777777;
+        padding: .5rem;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 300;
+        border: 1px solid rgb(222, 226, 230);
+        i{
+            font-weight: bold;
+        }
+    }
+}
+
+/*
+    ESTILOS A .recorridoPueblo
+*/
+
+.recorridoPueblo{
+    .imagenChica{
+        grid-area: imgChica;
+    }
+    .imagenGrande{
+        grid-area: imgGrande;
+    }
+    .descripcion{
+        grid-area: descripcion;
+        font-weight: lighter;
+        color: rgba(0,0,0, .5);
+        padding: 0 .5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contenedorGrid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "imgChica imgGrande imgGrande"
+            "descripcion imgGrande imgGrande";
+    }
+
+    .swiper-button-next, 
+    .swiper-button-prev {
+        color: #3e92bd;
+    }
+
+    .swiper-button-next:after, 
+    .swiper-button-prev:after {
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    .swiper-pagination-bullet-active {
+        opacity: 1;
+        background: black;
+    }
+
+    .swiper-pagination-bullet {
+        width: 1rem;
+        height: 1rem;
+    }
+
+}
+
+/*
+    ESTILOS A .planesParaMovil
+*/
+.planesParaMovil{
+    .swiper-container {
+        width: 100%;
+        height: 28rem;
+    }
+
+    .swiper-pagination-bullet-active {
+        opacity: 1;
+        background: black;
+    }
+
+    .swiper-pagination-bullet {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+/*
+    ESTILOS A .restaurante
+*/
+
+.restaurante{
+    height: 35rem;
+
+    .titulo{
+        font-size: 40px;
+    }
+
+    .carta{
+        grid-area: carta;
+        background-color: rgba(0,0,0, .7);
+        height: 85%;
+        margin: auto 0;
+        opacity: 0;
+        transition: all .3s ease;
+        .menu{
+            background-color: rgba(0,0,0, .8);
+            height: 80%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            align-items: center;
+            .item{
+                text-align: center;
+                img{
+                    width: 50%;
+                }
+                p{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .tarjeta{
+        grid-area: tarjeta;
+        background-color: #847059;
+        height: 106%;
+        transform: translateY(-3%);
+    }
+    
+    .contenedor-grid{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "carta tarjeta";
+    }
+}
+
+/*
+    ESTILOS A .pieDePagina
+*/
+
+.pieDePagina{
+    iframe{
+        height: 450px;
+    }
+    position: relative;
+    background-color: #197DB1;
+    .visitanos{
+        background-color: #FFCC29;
+        color: #937B53;
+        position: absolute;
+        top: 10%;
+        right: 10%;
+        height: 350px;
+        width: 400px;
+        padding: 2rem;
+        h3{
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
+}
+
+/********************************************************
+                       MEDIAS QUERYS
+********************************************************/
+@media(min-width:992px) and (max-width:1199px){
+    .picker__select--month, .picker__select--year {
+        width: 40%;
+    }
+    .bloqueReserva{
+        top: 49px;
+    }
+    .menuDeNavegacion{
+        top: 60px;
+    }
+    .sliderDeImagenes{
+        .swiper-slide img{
+            height: 30rem;
+        }
+    }
+    .verMas{
+        bottom: 5%;
+        height: 45px;
+        width: 45px;
+        i{
+            font-size: 25px;
+        }
+    }
+
+    .recorridoPueblo{
+        .descripcion{
+            grid-area: descripcion;
+            font-weight: lighter;
+            color: rgba(0,0,0, .5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h3{
+                font-size: 2rem;
+            }
+        }
+    }
+    
+}
+
+@media(max-width:991px){
+    .cabezera{
+        .contenedor{
+            .botonMenu{
+                width: 100%;
+                text-align: right;
+            }
+        }
+    }
+    #ventanaReserva{
+        display: none;
+    }
+    .menuDeNavegacionMovil{
+        position: fixed;
+        top: 85px;
+        overflow-y: scroll;
+    }
+    .sliderDeImagenes{
+        .swiper-slide img{
+            height: 25rem;
+        }
+    }
+    .verMas{
+        display: none;
+    }
+
+    .planes{
+        .descripcion{
+            grid-area: texto;
+            padding: 1rem;
+        }
+        .contenedor{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 200px;
+            grid-template-areas: 
+                "texto";
+        }
+    }
+
+    .recorridoPueblo{
+        .imagenChica{
+            grid-area: imgChica;
+            img{
+                width: 100%;
+            }
+        }
+        .imagenGrande{
+            display:none;
+        }
+        .descripcion{
+            grid-area: descripcion;
+            font-weight: lighter;
+            color: rgba(0,0,0, .5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    
+        .contenedorGrid{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 2fr 1fr;
+            grid-template-areas: 
+                "imgChica"
+                "descripcion";
+        }
+    
+    }
+
+    .restaurante{
+        height: 30rem;
+
+        .carta{
+            display: none;
+            transition: all .3s ease;
+        }
+    
+        .cartaMovil{
+            grid-area: carta;
+            background-color: rgba(0,0,0, .7);
+            transform: translateY(-4%);
+            transition: all .3s ease;
+            .menu{
+                background-color: rgba(0,0,0, .8);
+                height: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr .3fr;
+                align-items: center;
+                .item{
+                    text-align: center;
+                    padding: 1rem;
+                    img{
+                        width: 50%;
+                    }   
+                    p{
+                        margin-bottom: 0;
+                        font-size: 1rem;
+                    }
+                }
+                .volver{
+                    grid-column: 2 / 3;
+                }
+            }
+        }
+    
+        .tarjeta{
+            grid-area: tarjeta;
+            background-color: rgba(#4b3f33, .8);
+            height: 106%;
+            transform: translateY(-3%);
+            transition: all .3s ease;
+        }
+        
+        .contenedor-grid{
+            transition: all .3s ease;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 
+                "tarjeta tarjeta"
+                "tarjeta tarjeta";
+        }
+    }
+
+    .footerInferior{
+        display: none;
+    }
+
+    .pieDePagina{
+        iframe{
+            height: 380px;
+        }
+    }
+
+
+}
+
+@media(max-width:767px){
+    body{
+        overflow-x: initial;
+    }
+    .menuDeNavegacionMovil{
+        top: 73px;
+    }
+    .sliderDeImagenes{
+        .swiper-slide img{
+            height: 20rem;
+        }
+    }
+    .pieDePagina{
+        iframe{
+            height: 300px;
+        }
+    }
+}
+
+@media (max-width: 575px){
+    .menuDeNavegacionMovil{
+        top: 65px;
+    }
+    .sliderDeImagenes{
+        .swiper-slide img{
+            height: 15rem;
+        }
+    }
+    .planes{
+        .descripcion{
+            grid-area: texto;
+            padding: 1rem;
+        }
+        .contenedor{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 250px;
+            grid-template-areas: 
+                "texto";
+        }
+    }
+    .habitacion{
+        .precio{
+            font-size: 1.2rem;
+        }
+    }
+
+    .restaurante{
+        height: 30rem;
+
+        .titulo {
+            font-size: 35px;
+        }
+
+        .carta{
+            display: none;
+            transition: all .3s ease;
+        }
+    
+        .cartaMovil{
+            grid-area: carta;
+            background-color: rgba(0,0,0, .7);
+            transform: translateY(-4%);
+            transition: all .3s ease;
+            .menu{
+                background-color: rgba(0,0,0, .8);
+                height: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr .3fr;
+                align-items: center;
+                .item{
+                    text-align: center;
+                    padding: .5rem;
+                    img{
+                        width: 62%;
+                    }   
+                    p{
+                        margin-bottom: 0;
+                        font-size: .8rem;
+                    }
+                }
+                .volver{
+                    padding: 0 .5rem;
+                    grid-column: 1 / 3;
+                }
+            }
+        }
+    
+        .tarjeta{
+            grid-area: tarjeta;
+            background-color: rgba(#4b3f33, .8);
+            height: 106%;
+            transform: translateY(-3%);
+            padding: 0 .5rem;
+            transition: all .3s ease;
+        }
+        
+        .contenedor-grid{
+            transition: all .3s ease;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+                "tarjeta";
+        }
+    }
+
+    .recorridoPueblo{
+        .imagenChica{
+            grid-area: imgChica;
+            img{
+                width: 100%;
+            }
+        }
+        .imagenGrande{
+            display:none;
+        }
+        .descripcion{
+            grid-area: descripcion;
+            font-weight: lighter;
+            color: rgba(0,0,0, .5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            h3{
+                font-size: 30px;
+                padding-top: .5rem;
+            }
+        }
+    
+        .contenedorGrid{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr .6fr;
+            grid-template-areas: 
+                "imgChica"
+                "descripcion";
+        }
+    
+    }
+
+}
+
+@media (max-width: 424px){
+    .menuDeNavegacionMovil{
+        top: 55px;
+    }
+
+    .restaurante{
+        height: 30rem;
+
+        .titulo {
+            font-size: 35px;
+        }
+
+        .carta{
+            display: none;
+            transition: all .3s ease;
+        }
+    
+        .cartaMovil{
+            grid-area: carta;
+            background-color: rgba(0,0,0, .7);
+            transform: translateY(-4%);
+            transition: all .3s ease;
+            .menu{
+                background-color: rgba(0,0,0, .8);
+                height: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr .3fr;
+                align-items: center;
+                .item{
+                    text-align: center;
+                    padding: .5rem;
+                    img{
+                        width: 60%;
+                    }   
+                    p{
+                        margin-bottom: 0;
+                        font-size: .8rem;
+                    }
+                }
+                .volver{
+                    padding: 0 .5rem;
+                    grid-column: 1 / 3;
+                }
+            }
+        }
+    
+        .tarjeta{
+            grid-area: tarjeta;
+            background-color: rgba(#4b3f33, .8);
+            height: 106%;
+            transform: translateY(-3%);
+            padding: 0 .5rem;
+            transition: all .3s ease;
+        }
+        
+        .contenedor-grid{
+            transition: all .3s ease;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+                "tarjeta";
+        }
+    }
+
+        .recorridoPueblo{
+        .imagenChica{
+            grid-area: imgChica;
+            img{
+                width: 100%;
+            }
+        }
+        .imagenGrande{
+            display:none;
+        }
+        .descripcion{
+            grid-area: descripcion;
+            font-weight: lighter;
+            color: rgba(0,0,0, .5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            h3{
+                font-size: 30px;
+                padding-top: .5rem;
+            }
+        }
+    
+        .contenedorGrid{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 
+                "imgChica"
+                "descripcion";
+        }
+    
+    }
+
+    .recorridoPueblo{
+        .imagenChica{
+            grid-area: imgChica;
+            img{
+                width: 100%;
+            }
+        }
+        .imagenGrande{
+            display:none;
+        }
+        .descripcion{
+            grid-area: descripcion;
+            font-weight: lighter;
+            color: rgba(0,0,0, .5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            h3{
+                font-size: 30px;
+                padding-top: .5rem;
+            }
+        }
+    
+        .contenedorGrid{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr .7fr;
+            grid-template-areas: 
+                "imgChica"
+                "descripcion";
+        }
+    
+    }
+}
+
+@media(max-width: 374px){
+    .restaurante{
+        height: 30rem;
+
+        .titulo {
+            font-size: 35px;
+        }
+
+        .carta{
+            display: none;
+            transition: all .3s ease;
+        }
+    
+        .cartaMovil{
+            grid-area: carta;
+            background-color: rgba(0,0,0, .7);
+            transform: translateY(-4%);
+            transition: all .3s ease;
+            .menu{
+                background-color: rgba(0,0,0, .8);
+                height: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr .3fr;
+                align-items: center;
+                .item{
+                    text-align: center;
+                    padding: .5rem;
+                    img{
+                        width: 75%;
+                    }   
+                    p{
+                        margin-bottom: 0;
+                        font-size: .75rem;
+                    }
+                }
+                .volver{
+                    padding: 0 .5rem;
+                    grid-column: 1 / 3;
+                }
+            }
+        }
+    
+        .tarjeta{
+            grid-area: tarjeta;
+            background-color: rgba(#4b3f33, .8);
+            height: 106%;
+            transform: translateY(-3%);
+            padding: 0 .5rem;
+            transition: all .3s ease;
+        }
+        
+        .contenedor-grid{
+            transition: all .3s ease;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+                "tarjeta";
+        }
+    }
+
+    .recorridoPueblo{
+        .imagenChica{
+            grid-area: imgChica;
+            img{
+                width: 100%;
+            }
+        }
+        .imagenGrande{
+            display:none;
+        }
+        .descripcion{
+            grid-area: descripcion;
+            font-weight: lighter;
+            color: rgba(0,0,0, .5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            h3{
+                font-size: 30px;
+                padding-top: .5rem;
+            }
+        }
+    
+        .contenedorGrid{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 
+                "imgChica"
+                "descripcion";
+        }
+    
+    }
+
+    .menuDeNavegacionMovil{
+        top: 50px;
+    }
+
+}
+
