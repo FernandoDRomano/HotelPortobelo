@@ -1,0 +1,113 @@
+/*
+    ESTILOS A .bannerHabitacion
+*/
+.bannerHabitacion .imagen {
+  height: 19rem;
+  width: 100%;
+  background-image: url(../img/banner01.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.bannerHabitacion .imagen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*
+    ESTILOS A .testimoniales
+*/
+.testimoniales {
+  background-image: url(../img/fondoComentarios.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.testimoniales::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(134, 118, 100, 0.9);
+}
+.testimoniales .btnVerMasComentarios {
+  padding: 0.7rem 1.3rem;
+  border: 3px solid white;
+  border-radius: 0.5rem;
+  color: white;
+}
+
+/*
+    ESTILOS A .contenidoPrincipalHabitacion
+*/
+.contenidoPrincipalHabitacion .swiper-button-next:after, .contenidoPrincipalHabitacion .swiper-button-prev:after {
+  font-family: swiper-icons;
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: none !important;
+  letter-spacing: 0;
+  text-transform: none;
+  font-variant: initial;
+  color: black;
+  padding: 1rem;
+  background-color: white;
+}
+.contenidoPrincipalHabitacion .contenidoCentral {
+  margin-top: -7.5rem;
+}
+.contenidoPrincipalHabitacion .contenidoCentral .informacionHabitacion {
+  color: white;
+}
+.contenidoPrincipalHabitacion .contenidoCentral .informacionHabitacion ul li {
+  border-right: 1px solid white;
+}
+.contenidoPrincipalHabitacion .contenidoCentral .informacionHabitacion a {
+  font-size: 20px;
+  color: white;
+}
+.contenidoPrincipalHabitacion .contenidoCentral .multimediaHabitacion {
+  overflow: hidden;
+  height: 20rem;
+}
+.contenidoPrincipalHabitacion .contenidoCentral .botonesMultimedia .tituloHabitacion {
+  font-size: 2.5rem;
+  color: #847059;
+}
+.contenidoPrincipalHabitacion .contenidoCentral .botonesMultimedia .botonMultimedia {
+  background-color: black;
+  color: white;
+  padding: 0.7rem 1rem;
+}
+.contenidoPrincipalHabitacion .contenidoCentral .contenidoTextual p {
+  color: rgba(0, 0, 0, 0.7);
+}
+.contenidoPrincipalHabitacion .contenidoCentral .formularioDisponibilidadHabitacion {
+  background-color: #509CC3;
+  padding: 1rem 1rem 0rem 1rem;
+  margin-bottom: 3rem;
+}
+.contenidoPrincipalHabitacion .contenidoCentral .formularioDisponibilidadHabitacion .btn-negro {
+  background-color: black;
+  color: white;
+}
+.contenidoPrincipalHabitacion .contenidoLateralDerecho .serviciosHabitacion h2 {
+  font-size: 2.5rem;
+  color: #847059;
+}
+.contenidoPrincipalHabitacion .contenidoLateralDerecho .serviciosHabitacion ul li {
+  margin-bottom: 0.6rem;
+}
+.contenidoPrincipalHabitacion .contenidoLateralDerecho .serviciosHabitacion ul li i {
+  color: #847059;
+  width: 10%;
+}
+
+/*# sourceMappingURL=habitacion.css.map */

@@ -265,7 +265,7 @@ let scrollUp = document.getElementById('scrollUp');
 
 window.onscroll = () => {
     //PARA OCULTAR O MOSTRAR EL BLOQUE DE RESERVAS
-    if (window.scrollY > 200) {
+    if (window.scrollY > 100) {
         ocultarBloqueReserva();
     } else {
         visibilizarBloqueReserva();
@@ -280,21 +280,72 @@ window.onscroll = () => {
 
 }
 
-let buttons = document.querySelectorAll('a');
-  buttons.forEach((button) => {
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-    
-      let target = e.currentTarget.getAttribute('href');
-    
-      if(target != "#"){
-          document.querySelector(target).scrollIntoView({
-            behavior: 'smooth'
-          });
-      }
-      
-    });
+/*
+    CONFIGURANDO LA PAGINÁ DE HABITACION.HTML
+*/
+
+//CONFIGURACIÓN DE LOS BOTONES DE FOTOS Y VIDEOS
+let btnFoto = document.getElementById('btnFotos');
+let btnVideo = document.getElementById('btnVideo');
+let btn360 = document.getElementById('btn360');
+let sliderImagen = document.querySelector('.contenidoPrincipalHabitacion .contenidoCentral .multimediaHabitacion .sliderImagenes');
+let video = document.querySelector('.contenidoPrincipalHabitacion .contenidoCentral .multimediaHabitacion .video');
+let imagen360 = document.querySelector('.contenidoPrincipalHabitacion .contenidoCentral .multimediaHabitacion .imagen360');
+
+
+function mostrarVideo(){
+    video.classList.replace('d-none', 'd-block');
+}
+
+function mostrarSliderDeImagenes(){
+    sliderImagen.classList.replace('d-none', 'd-block');
+}
+
+function mostrarImagen360(){
+    imagen360.classList.replace('d-none', 'd-block');
+}
+
+function ocultarVideo(){
+    video.classList.replace('d-block', 'd-none');
+}
+
+function ocultarSliderDeImagenes(){
+    sliderImagen.classList.replace('d-block', 'd-none');
+}
+
+function ocultarImagen360(){
+    imagen360.classList.replace('d-block', 'd-none');
+}
+
+btnFoto.addEventListener('click', (e)=>{
+    e.preventDefault();
+    ocultarVideo();
+    ocultarImagen360();
+    mostrarSliderDeImagenes();
 });
+
+btnVideo.addEventListener('click', (e)=>{
+    e.preventDefault();
+    ocultarSliderDeImagenes();
+    ocultarImagen360();
+    mostrarVideo();
+});
+
+btn360.addEventListener('click', (e)=>{
+    e.preventDefault();
+    ocultarSliderDeImagenes();
+    ocultarVideo();
+    mostrarImagen360();
+});
+
+//CONFIGURACIÓN DEL DESPLIEGUE DE LA SEGUNDA COLUMNA DE LA PAGINA HABITACION.HTML
+let columna = document.querySelector('.contenidoPrincipalHabitacion .contenidoLateralDerecho');
+
+function bajarColumnaLateralDerecha(){
+    columna.style.marginTop = '3rem';
+}
+
+bajarColumnaLateralDerecha();
 
 /*
     CONFIGURACIÓN DEL DATEPICKER
@@ -407,9 +458,42 @@ let mySwiperRecorridoPorElPueblo = new Swiper ('.swiper-container-recorridoPuebl
     grabCursor: true
 });
 
+let mySwiperHabitacion = new Swiper ('.swiper-container-habitacion', {
+    //PARA QUE SE AUTO INICIE
+    autoplay: {
+        delay: 3000,
+    },
+    //ACTIVAR LAS FLECHAS DE NAVEGACIÓN
+    navigation: {
+        nextEl: '.swiper-button-next-habitacion',
+        prevEl: '.swiper-button-prev-habitacion',
+    },
+    //PARA CONTROLAR CON LOS BOTONES DEL TECLADO
+    keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+    },
+    //LOOP INFINITO
+    loop: true,
+    //EFECTO AL PASAR EL SLIDE
+    effect: 'fade',
+    //TIEMPO ENTRE CAMBIO DE IMAGEN
+    speed: 700,
+    //PARA MOFICAR EL CURSOR: PARA QUE APARESCA LA MANITO
+    grabCursor: true
+});
+
 /*
     CONFIGURANDO UNIVERSAL PARALLAX   
 */
 new universalParallax().init({
 	speed: 6.0
+});
+
+/*
+    CONFIGURACIÓN DE PANO - PARA LAS IMAGENES DE 360°
+*/
+
+$("#myPano").pano({
+	img: "img/360.jpg"
 });

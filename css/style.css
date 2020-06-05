@@ -25,6 +25,10 @@ body {
   position: relative;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /*
     ESTILOS A LA FLECHA DEL SCROLL UP
 */
@@ -174,7 +178,7 @@ body {
   position: absolute;
   top: 47px;
   right: 0;
-  width: 375px;
+  width: 395px;
   height: auto;
   padding: 0 0.7rem;
   transition: all 0.3s ease-in-out;
@@ -573,6 +577,7 @@ body {
 
   .bloqueReserva {
     top: 49px;
+    width: 340px;
   }
 
   .menuDeNavegacion {

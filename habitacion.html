@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<title>Hotel Portobelo | Habitación</title>
+	<link rel="icon" href="img/icono.jpg">
+
+	<!--=====================================
+	    VÍNCULOS CSS
+	======================================-->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<!-- Fuente Open Sans y Ubuntu -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Ubuntu" rel="stylesheet">
+	<!-- datepicker -->
+	<link rel="stylesheet" href="css/classic.css">
+	<link rel="stylesheet" href="css/classic.date.css">
+	<!-- jdSlider -->
+	<link rel="stylesheet" href="css/jquery.jdSlider.css">
+	<!-- Pano -->
+	<link rel="stylesheet" href="css/jquery.pano.css">
+	 <!-- fullCalendar -->
+	<link rel="stylesheet" href="css/fullcalendar.min.css">
+	<!-- SWIPER -PARA EL SLIDER DE IMAGENES -->
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<!-- UNIVERSAL PARALLAX -->
+	<link rel="stylesheet" href="css/universal-parallax.css">
+	<!-- Hoja de estilo personalizada -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Hoja de estilo de esta página -->
+    <link rel="stylesheet" href="css/habitacion.css">
+</head>
+<body>
+
+	<!-- HEADER -->
+	<header id="cabezeraID" class="cabezera">
+		<div class="container">
+			<div class="row py-2 justify-content-lg-between align-items-center">
+				<!-- LOGO -->
+				<div class="col-9 col-lg-4 col-xl-3">
+					<a href="index.html">
+						<img src="img/logoPortobelo.png" alt="Logo de Portobelo" class="img-fluid">
+					</a>
+				</div>
+				<!-- BLOQUE BOTONES MENU-->
+				<div class="col-3 col-lg-4">
+					<div class="contenedor d-flex align-items-center justify-content-lg-between">
+						<!-- BOTON CAMPANA RESERVA-->
+						<div class="campanaReserva d-none d-lg-block">
+							<a href="#" id="btnReserva">
+								<i class="campana fas fa-concierge-bell lead mr-2"></i>
+								<i class="flechaCampana fas fa-caret-up lead mx-2"></i>
+							</a>
+
+							<div id="bloqueReservaID" class="bloqueReserva" data-modo="abajo">
+								<form action="#" id="formularioReservaEscritorio" class="formularioReservaGrande py-3">
+
+									<div class="form-group">
+									  <label for="tipoReserva" class="sr-only">Tipo de habitación</label>
+									  <select class="form-control" name="tipoReserva" id="tipoReserva">
+										<option value="null">Tipo de habitación</option>
+										<option value="1">Suite</option>
+										<option value="2">Especial</option>
+										<option value="3">Estandar</option>
+									  </select>
+									</div>
+			
+									<div class="form-group">
+										<label for="tematicaReserva" class="sr-only">Tematica de la habitación</label>
+										<select class="form-control" name="tematicaReserva" id="tematicaReserva">
+										  <option value="null">Temática de habitación</option>
+										  <option value="1">Oriental</option>
+										  <option value="2">Contemporánea</option>
+										  <option value="3">Africana</option>
+										  <option value="3">Clásica</option>
+										  <option value="3">Retro</option>
+										</select>
+									</div>
+			
+									<div class="form-group">
+										<div class="input-group">
+											<input type="date" id="fechaEntradaReserva" name="fechaEntradaReserva" class="form-control datepicker" placeholder="Entrada">
+											<label class="input-group-append input-group-campo" for="fechaEntradaReserva">
+											  <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+											</label>							  
+										</div>
+									</div>
+											
+									<div class="form-group">
+										<div class="input-group">
+											<input type="date" id="fechaSalidaReserva" name="fechaSalidaReserva" class="form-control datepicker" placeholder="Salida">
+											<label class="input-group-append input-group-campo" for="fechaSalidaReserva">
+											  <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+											</label>							  
+										</div>
+									</div>
+			
+									<div class="form-group mb-0">
+										<a href="#" class="btn bg-negro text-white btn-block">Ver disponibilidad</a>
+									</div>
+			
+								</form>
+							</div>
+
+						</div>
+						<!-- BOTON LOGIN/REGISTER -->
+						<div class="loginRegister d-none d-lg-block">
+							<a href="#" data-toggle="modal" data-target="#modalLoginRegister">
+								<i class="fas fa-user"></i>
+							</a>
+						</div>
+						<!-- IDIOMAS -->
+						<div class="idiomas d-lg-flex d-none">
+							<span id="idiomaEsp" class="p-1">ES</span>
+							<span id="idiomaIng" class="p-1">EN</span>
+						</div>
+						<!-- BOTON MENU -->
+						<div class="botonMenu mr-3 mr-md-0">
+							<a id="btnMenu" href="#">
+								<i class="fas fa-bars"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Modal LOGIN/REGISTER-->
+	<div class="modal fade" id="modalLoginRegister" tabindex="-1" role="dialog"	 aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header bg-info">
+				<h5 class="modal-title text-white" id="tituloModal">Ingresar</h5>
+				<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<!-- BODY DEL MODAL -->
+			<div class="modal-body">
+				<!-- BOTONES DE REDES SOCIALES DEL MODAL -->
+				<div class="row no-gutters botonesRedes justify-content-around">
+					<div class="col-6 pr-2">
+						<a href="#" class="boton botonFacebook">
+							Ingresar <span class="d-none d-sm-inline-block">con Facebook</span> <i class="pl-1 fab fa-facebook-square"></i>
+						</a>
+					</div>
+					<div class="col-6 pl-2">
+						<a href="#" class="boton botonGoogle">
+							Ingresar <span class="d-none d-sm-inline-block">con Google</span> <i class="pl-1 fab fa-google"></i>
+						</a>
+					</div>
+				</div>
+
+				<hr>
+				
+				<!-- FORMULARIO DE LOGIN -->
+				<form action="#" id="formularioLogin" class="formularioLoginGrande">
+					
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="fas fa-envelope text-dark"></i>
+								</span>
+							</div>
+							<input type="email" name="emailLogin" id="emailLogin" class="form-control" placeholder="Email">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="fas fa-unlock-alt text-dark"></i>
+								</span>
+							</div>
+							<input type="password" id="passwordLogin" name="passwordLogin" class="form-control" placeholder="Password">
+						</div>
+					</div>
+
+					<div class="form-group mb-0">
+						<a href="#" class="btn btn-dark btn-block">Ingresar</a>
+					</div>
+
+				</form>
+
+				<!-- FORMULARIO DE REGISTER -->
+				<form action="#" id="formularioRegister" class="formularioRegisterGrande">
+					
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="fas fa-user-alt text-dark"></i>
+								</span>
+							</div>
+							<input type="text" name="nombreRegistro" id="nombreRegistro" class="form-control" placeholder="Nombre y Apellido">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="fas fa-envelope text-dark"></i>
+								</span>
+							</div>
+							<input type="email" name="emailRegistro" id="emailRegistro" class="form-control" placeholder="Email">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="fas fa-unlock-alt text-dark"></i>
+								</span>
+							</div>
+							<input type="password" id="passwordRegistro" name="passwordRegistro" class="form-control" placeholder="Password">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="fas fa-unlock-alt text-dark"></i>
+								</span>
+							</div>
+							<input type="password" id="passwordRepeatRegistro" name="passwordRepeatRegistro" class="form-control" placeholder="Repetir Password">
+						</div>
+					</div>
+
+					<div class="form-group mb-0">
+						<a href="#" class="btn btn-dark btn-block">Ingresar</a>
+					</div>
+
+				</form>
+
+			</div>
+			<div class="modal-footer">
+				<p class="mb-0 bloqueFooterRegister">¿No tiene una cuenta registrada? <a href="#" id="btnRegistrarse">Registrarse</a></p>
+				<p class="mb-0 bloqueFooterLogin">¿Ya tienes una cuenta registrada? <a href="#" id="btnLogin">Ingresar</a></p>
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- FIN DEL MODAL -->
+		
+	<!-- MENU DE NAVEGACION -->
+	<nav id="menuPrincipal" class="menuDeNavegacion container-fluid px-0" data-modo="oculto">
+		<div class="row py-2">
+			<div class="col-10">
+				<ul class="nav nav-justified">
+					<li class="nav-item"><a class="nav-link text-white" href="#planesHotel">Planes</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="#habitacionesHotel">Habitaciones</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="#recorridoPorElPueblo">El Pueblo</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="#restauranteHotel">Restaurante</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="#contactoHotel">Contactanos</a></li>
+				</ul>
+			</div>
+			<div class="col-2 pl-0">
+				<ul class="list-unstyled mb-0 d-flex align-items-center h-100">
+					<li class="mx-2"><a href="https://www.facebook.com/"><i class="fab fa-facebook-f text-white lead"></i></a></li>
+					<li class="mx-2"><a href="https://twitter.com/"><i class="fab fa-twitter text-white lead"></i></a></li>
+					<li class="mx-2"><a href="https://www.youtube.com/"><i class="fab fa-youtube text-white lead"></i></a></li>
+					<li class="mx-2"><a href="https://www.instagram.com/"><i class="fab fa-instagram text-white lead"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+
+	<!-- MENU DE NAVEGACIÓN PARA MOVIL-->
+	<section id="menuPrincipalMovil" class="container-fluid menuDeNavegacionMovil" data-modo="oculto">
+		<div class="row">
+			<!-- LOGIN Y IDIOMA-->
+			<div class="col-12 py-3 py-sm-4">
+				<div class="row contenedor justify-content-between align-items-center">
+					<!-- LOGIN -->
+					<div class="col-auto mx-3 mx-sm-5">
+						<div class="loginRegister">
+							<a href="#" data-toggle="modal" data-target="#modalLoginRegister">
+								<i class="fas fa-user"></i>
+							</a>
+
+						</div>
+					</div>
+					<!-- IDIOMA -->
+					<div class="col-auto mx-3 mx-sm-5">
+						<div class="idiomas d-flex">
+							<span id="idiomaEspMovil" class="p-1">ES</span>
+							<span id="idiomaIngMovil" class="p-1">EN</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- RESERVA -->
+			<div class="col-12 reserva">
+				<form action="#" id="formularioReservaMovil" class="formularioReservaMovil py-3">
+
+					<div class="form-group">
+					  <label for="tipoReservaMovil" class="sr-only">Tipo de habitación</label>
+					  <select class="form-control" name="tipoReservaMovil" id="tipoReservaMovil">
+						<option value="null">Tipo de habitación</option>
+						<option value="1">Suite</option>
+						<option value="2">Especial</option>
+						<option value="3">Estandar</option>
+					  </select>
+					</div>
+
+					<div class="form-group">
+						<label for="tematicaReservaMovil" class="sr-only">Tematica de la habitación</label>
+						<select class="form-control" name="tematicaReservaMovil" id="tematicaReservaMovil">
+						  <option value="null">Temática de habitación</option>
+						  <option value="1">Oriental</option>
+						  <option value="2">Contemporánea</option>
+						  <option value="3">Africana</option>
+						  <option value="3">Clásica</option>
+						  <option value="3">Retro</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group">
+							<input type="date" id="fechaIngresoReservaMovil" name="fechaIngresoReservaMovil" class="form-control datepicker" placeholder="Entrada">
+							<label class="input-group-append input-group-campo" for="fechaIngresoReservaMovil">
+							  <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+							</label>							  
+						</div>
+					</div>
+							
+					<div class="form-group">
+						<div class="input-group">
+							<input type="date" id="fechaSalidaReservaMovil" name="fechaSalidaReservaMovil" class="form-control datepicker" placeholder="Salida">
+							<label class="input-group-append input-group-campo" for="fechaSalidaReservaMovil">
+							  <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+							</label>							  
+						</div>
+					</div>
+
+					<div class="form-group mb-0">
+						<a href="#" class="btn bg-negro text-white btn-block">Ver disponibilidad</a>
+					</div>
+
+				</form>
+			</div>
+			<!-- MENU DE NAVEGACIÓN -->
+			<div class="col-12 bg-negro mb-sm-4 mb-md-5">
+				<nav class="menuDeNavegacionParaMovil">
+					<ul class="list-unstyled d-flex flex-column">
+						<li class="py-2 py-sm-3 px-3"><a class="text-white" href="#planesMovil">Planes</a></li>
+						<li class="py-2 py-sm-3 px-3"><a class="text-white" href="#habitacionesHotel">Habitaciones</a></li>
+						<li class="py-2 py-sm-3 px-3"><a class="text-white" href="#recorridoPorElPueblo">El Pueblo</a></li>
+						<li class="py-2 py-sm-3 px-3"><a class="text-white" href="#restauranteHotel">Restaurante</a></li>
+						<li class="py-2 py-sm-3 px-3"><a class="text-white" href="#contactoHotel">Contactanos</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</section>
+
+	<!-- REDES SOCIALES MOVIL -->
+	<section id="redesSociales" class="redesSocialesMovil d-block d-lg-none py-2">
+		<ul class="list-unstyled mb-0 d-flex align-items-center justify-content-around">
+			<li class="mx-2"><a href="#"><i class="fab fa-facebook-f text-white lead"></i></a></li>
+			<li class="mx-2"><a href="#"><i class="fab fa-twitter text-white lead"></i></a></li>
+			<li class="mx-2"><a href="#"><i class="fab fa-youtube text-white lead"></i></a></li>
+			<li class="mx-2"><a href="#"><i class="fab fa-instagram text-white lead"></i></a></li>
+		</ul>
+    </section>
+    
+    <!--===========================================
+	INICIO CONTENIDO DE LA PÁGINA HABITACIÓN.HTML
+    ============================================-->
+    
+    <!-- BANNER DE LA HABITACIÓN -->
+    <section id="bannerHabitacion" class="bannerHabitacion d-none d-lg-block">
+        <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12">
+                    <div class="imagen"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL DE LA HABITACIÓN -->   
+    <section class="contenidoPrincipalHabitacion" id="contenidoPrincipalHabitacionID">
+        <div class="container">
+            <div class="row">
+                <!-- CONTENIDO CENTRAL -->
+                <div class="col-12 col-lg-8 contenidoCentral">
+                    <!-- INFORMACIÓN DE LA HABITACIÓN -->
+                    <div class="row informacionHabitacion">
+                        <div class="col-12 d-flex align-items-center justify-content-between">
+                            <a href="index.html"> <i class="fas fa-chevron-left"></i> Regresar</a>
+                            <h2 class="text-uppercase mb-0">Suite</h2>
+                        </div>
+                        <div class="col-12">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li class="flex-fill py-2 text-center"><a href="#"><i class="fas fa-chevron-right"></i> Oriental</a></li>
+                                <li class="flex-fill py-2 text-center"><a href="#">Comtemporánea</a></li>
+                                <li class="flex-fill py-2 text-center"><a href="#">Africana</a></li>
+                                <li class="flex-fill py-2 text-center"><a href="#">Clásica</a></li>
+                                <li class="flex-fill py-2 text-center"><a href="#">Retro</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- MULTIMEDIA -->
+                    <div class="row multimediaHabitacion">
+                        <div class="col-12">
+                            <!-- SLIDER DE IMAGENES -->
+                            <div class="sliderImagenes d-block h-100">
+                                <div class="swiper-container swiper-container-habitacion">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides -->
+                                        <div class="swiper-slide"><img src="img/oriental.png" class="img-fluid"></div>
+										<div class="swiper-slide"><img src="img/oriental.png" class="img-fluid"></div>
+										<div class="swiper-slide"><img src="img/oriental.png" class="img-fluid"></div>
+                                    </div>
+                                
+                                    <!-- If we need navigation buttons -->
+                                    <div class="swiper-button-prev swiper-button-prev-habitacion"></div>
+                                    <div class="swiper-button-next swiper-button-next-habitacion"></div>
+                                
+                                </div>
+                            </div>
+                            <!-- VIDEO -->
+                            <div class="video d-none h-100">
+								<iframe width="100%" height="100%" src="https://www.youtube.com/embed/-Ayp-0epwIs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+							<!-- IMAGEN 360 -->
+							<div class="imagen360 d-none h-100">
+								<div id="myPano" class="pano">
+									<div class="controls">
+										<a href="#" class="left">&laquo;</a>
+										<a href="#" class="right">&raquo;</a>
+									</div>
+								</div>
+							</div>
+                        </div>
+					</div>
+					<!-- BOTONES MULTIMEDIA -->
+					<div class="row botonesMultimedia my-3 justify-content-between align-items-center">
+						<div class="col-auto">
+							<h2 class="tituloHabitacion text-uppercase mb-0">Oriental Suite</h2>
+						</div>
+						<div class="col-auto">
+							<a href="#" id="btnFotos" class="botonMultimedia"><i class="fas fa-camera"></i> Fotos</a>
+							<a href="#" id="btnVideo" class="botonMultimedia"><i class="fab fa-youtube"></i> Video</a>
+							<a href="#" id="btn360" class="botonMultimedia"><i class="fas fa-video"></i> 360°</a>
+						</div>
+					</div>
+					<!-- CONTENIDO TEXTUAL -->
+					<div class="row contenidoTextual">
+						<div class="col-12">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit, quia blanditiis fugiat nam libero possimus totam modi sint autem repellat fugit dicta est pariatur? Ut aut vel ad sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, reprehenderit! Deserunt laborum dolorum deleniti molestiae quae vitae animi ratione nihil, minus ut quibusdam incidunt voluptate eos sed id repudiandae ex.</p>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, provident soluta. Rerum, qui consequatur. Quam iure sapiente repellat quidem. Delectus dicta impedit facere, aliquid nisi sequi repellat nostrum voluptatibus porro.</p>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem qui harum labore molestias ipsa inventore velit vero! Vero nostrum quibusdam voluptatibus illo, accusantium temporibus sed possimus, dignissimos laboriosam fuga fugit, quam vitae quia! Ex, nihil.</p>
+
+							<div class="descripcionHabitacion my-5">
+								<h2 class="text-uppercase ">Plan Continental</h2>
+								<p class="mb-1">(Precio x pareja 1 día 1 noche, incluye: desayuno)</p>
+								<p class="mb-1">Temporada Baja:$300 USD</p>
+								<p class="mb-1">Temporada Alta $350 USD</p>
+							</div>
+
+							<div class="descripcionHabitacion my-5">
+								<h2 class="text-uppercase ">Plan Americano</h2>
+								<p class="mb-1">(Precio x pareja 1 día 1 noche, incluye: cena, desayuno, almuerzo)</p>
+								<p class="mb-1">Temporada Baja:$380 USD</p>
+								<p class="mb-1">Temporada Alta $420 USD</p>
+							</div>
+
+							<p>Hora de entrada (Check in) 3:00 pm | Hora de salida (Check out) 1:00 pm</p>
+							<form action="#" id="formularioDisponibilidadHabitacionID" class="formularioDisponibilidadHabitacion">
+								<div class="row align-items-center h-100">
+									<div class="col-12 col-md-4 pr-0">
+										<div class="form-group">
+											<div class="input-group">
+												<input type="date" id="fechaIngresoReservaHabitacion" name="fechaIngresoReservaHabitacion" class="form-control datepicker" placeholder="Entrada">
+												<label class="input-group-append input-group-campo" for="fechaIngresoReservaHabitacion">
+												  <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+												</label>							  
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-md-4">
+										<div class="form-group">
+											<div class="input-group">
+												<input type="date" id="fechaSalidaReservaHabitacion" name="fechaSalidaReservaHabitacion" class="form-control datepicker" placeholder="Salida">
+												<label class="input-group-append input-group-campo" for="fechaSalidaReservaHabitacion">
+												  <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+												</label>							  
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-md-4 pl-0">
+										<div class="form-group">
+											<a href="#" class="btn btn-negro btn-block text-center">Ver Disponibilidad</a>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+                </div>
+                <!-- CONTENIDO LATERAL DERECHO -->
+                <div class="col-12 col-lg-4 contenidoLateralDerecho">
+					<div class="row serviciosHabitacion">
+						<div class="col-12">
+							<h2 class="text-uppercase">Suite Incluye</h2>
+							<ul>
+								<li><i class="fas fa-bed lead"></i> Cama 2x2</li>
+								<li><i class="fas fa-tv lead"></i> Tv de 42"</li>
+								<li><i class="fas fa-tint lead"></i> Agua Caliente</li>
+								<li><i class="fas fa-water lead"></i> Jacuzzi</li>
+								<li><i class="fas fa-toilet lead"></i> Baño Privado</li>
+								<li><i class="fas fa-couch lead"></i> Sofá</li>
+								<li><i class="far fa-image lead"></i> Balcón</li>
+								<li><i class="fas fa-wifi lead"></i> Wifi</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row my-4 habitacines justify-content-center">
+						<!-- HABITACION INDIVIDUAL-->
+						<div class="col-11 mb-3 mb-md-4">
+							<div class="habitacion">
+								<a href="habitacion.html">
+									<div class="imagen">
+										<img src="img/habitacion02.png" alt="Habitacion del Hotel Portobelo" class="img-fluid w-100">
+										<div class="tipo especial">
+											<h3 class="text-uppercase mb-0">Especial</h3>
+										</div>
+									</div>
+									<div class="descripcion">
+										<p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+									</div>
+									<div class="precio">
+										<h3 class="text-uppercase">Desde $200 USD</h3>
+									</div>
+									<div class="footer">
+										<p class="mb-0">Ver Detalles <i class="fas fa-chevron-right ml-2"></i> </p>
+									</div>
+								</a>
+							</div>
+						</div>
+						<!-- HABITACION INDIVIDUAL-->
+						<div class="col-11 mb-3 mb-md-4">
+							<div class="habitacion">
+								<a href="habitacion.html">
+									<div class="imagen">
+										<img src="img/habitacion03.png" alt="Habitacion del Hotel Portobelo" class="img-fluid w-100">
+										<div class="tipo standar">
+											<h3 class="text-uppercase mb-0">Standar</h3>
+										</div>
+									</div>
+									<div class="descripcion">
+										<p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+									</div>
+									<div class="precio">
+										<h3 class="text-uppercase">Desde $150 USD</h3>
+									</div>
+									<div class="footer">
+										<p class="mb-0">Ver Detalles <i class="fas fa-chevron-right ml-2"></i> </p>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALES -->
+    <section id="testimonialesID" class="testimoniales">
+        <div class="container h-100">
+            <div class="row justify-content-center align-items-center py-5 text-white h-100">
+                <div class="col-12 my-4 my-lg-0">
+                    <h2 class="text-center text-uppercase h1 my-5">Testimonios</h2>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 px-3 mb-5 mb-lg-0 text-center">
+                    <img src="img/testimonio01.png" class="img-fluid">
+                    <h3 class="py-2 py-lg-4">Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur impedit laudantium sed porro quidem necessitatibus dicta quos, obcaecati delectus et reprehenderit inventore excepturi debitis aliquam.</p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 px-3 mb-5 mb-lg-0 text-center">
+                    <img src="img/testimonio02.png" class="img-fluid">
+                    <h3 class="py-2 py-lg-4">Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur impedit laudantium sed porro quidem necessitatibus dicta quos, obcaecati delectus et reprehenderit inventore excepturi debitis aliquam.</p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 px-3 mb-5 mb-lg-0 text-center">
+                    <img src="img/testimonio03.png" class="img-fluid">
+                    <h3 class="py-2 py-lg-4">Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur impedit laudantium sed porro quidem necessitatibus dicta quos, obcaecati delectus et reprehenderit inventore excepturi debitis aliquam.</p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 px-3 mb-5 mb-lg-0 text-center">
+                    <img src="img/testimonio04.png" class="img-fluid">
+                    <h3 class="py-2 py-lg-4">Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur impedit laudantium sed porro quidem necessitatibus dicta quos, obcaecati delectus et reprehenderit inventore excepturi debitis aliquam.</p>
+                </div>
+                <div class="col-12 text-right my-3 my-lg-4">
+                    <a href="#" class="btnVerMasComentarios text-uppercase">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--===========================================
+	FIN DEL CONTENIDO DE LA PÁGINA HABITACION.HTML
+	============================================-->
+
+	<!-- PLANES -->
+	<section id="planesHotel" class="planes">
+		<div class="container p-0">
+			<div class="row p-0">
+				<div class="col-12">
+					<div class="contenedor">
+						<div class="descripcion">
+							<div class="bienvenido d-block">
+								<h2 class="titulo">Bienvenido</h2>
+								<p class="text-black-50">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut natus fugit, odit rerum odio exercitationem error officiis repellendus molestias rem!</p>
+							</div>
+							<div class="romantico d-none">
+								<h2 class="titulo">Plan Romántico</h2>
+								<p class="text-black-50">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus hic fuga cupiditate dolor accusantium in possimus, necessitatibus tenetur nisi non voluptatibus ducimus at inventore atque sint. Rem recusandae exercitationem eligendi.</p>
+							</div>
+							<div class="lunaDeMiel d-none">
+								<h2 class="titulo">Plan Luna de Miel</h2>
+								<p class="text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, suscipit fugiat ipsa quibusdam sint veritatis delectus hic reprehenderit animi omnis amet iure voluptatem placeat corporis earum ratione commodi voluptatibus magnam.</p>
+							</div>
+							<div class="aventura d-none">
+								<h2 class="titulo">Plan Aventura</h2>
+								<p class="text-black-50">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis accusantium quidem nam debitis deserunt ut tempora doloribus repellendus, modi totam similique, recusandae veniam ratione omnis quas animi nostrum aliquid distinctio? Culpa cumque debitis architecto molestias praesentium?</p>
+							</div>
+							<div class="spa d-none">
+								<h2 class="titulo">Plan Spa</h2>
+								<p class="text-black-50">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et rem dicta quibusdam doloremque quae ullam sequi asperiores magnam optio. Reiciendis maiores id odio quasi porro.</p>
+							</div>
+						</div>
+						<div class="item item2 d-none d-lg-block" data-toggle="modal" data-target="#modalRomantico">
+							<div class="contenido">
+								<h2 class="text-uppercase text-white">Plan Romántico</h2>
+							</div>
+						</div>
+						<div class="item item3 d-none d-lg-block" data-toggle="modal" data-target="#modalLunaDeMiel">
+							<div class="contenido">
+								<h2 class="text-uppercase text-white">Plan Luna de Miel</h2>
+							</div>
+						</div>
+						<div class="item item4 d-none d-lg-block" data-toggle="modal" data-target="#modalAventura">
+							<div class="contenido">
+								<h2 class="text-uppercase text-white">Plan Aventura</h2>
+							</div>
+						</div>
+						<div class="item item5 d-none d-lg-block" data-toggle="modal" data-target="#modalSpa">
+							<div class="contenido">
+								<h2 class="text-uppercase text-white">Plan Spa</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- PLANES PARA MOVIL -->
+    <section id="planesMovil" class="planesParaMovil d-lg-none">
+        <div class="container-fluid px-0">
+            <div class="row">
+                <div class="col-12">
+					<h2 class="text-uppercase py-4 text-center tituloSeccion">Planes</h2>
+				</div>
+                <div class="col-12">
+                    <!-- Swiper -->	
+                    <div class="swiper-container swiper-planes">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+								<img src="img/plan-romantico.png">
+								<a href="#" class="text-uppercase d-block text-center pt-2 mb-3" data-toggle="modal" data-target="#modalRomantico">Romántico</a>
+                            </div>
+                            <div class="swiper-slide">
+								<img src="img/luna-de-miel.png">
+								<a href="#" class="text-uppercase d-block text-center pt-2 mb-3" data-toggle="modal" data-target="#modalLunaDeMiel">Luna de Miel</a>
+                            </div>
+                            <div class="swiper-slide">
+								<img src="img/plan-aventura.png">
+								<a href="#" class="text-uppercase d-block text-center pt-2 mb-3" data-toggle="modal" data-target="#modalAventura">Aventura</a>
+                            </div>
+                            <div class="swiper-slide">
+								<img src="img/plan-spa.png">
+								<a href="#" class="text-uppercase d-block text-center pt-2 mb-3" data-toggle="modal" data-target="#modalSpa">Spa</a>
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination swiper-pagination-planes"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</section>
+	
+	<!-- MODALES DE PLANES -->
+		<div class="modal fade" id="modalRomantico" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title text-uppercase text-center">Romántico</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+					</div>
+					<div class="modal-body">
+						<img src="img/plan-romantico.png" class="img-fluid">
+						<p class="mb-0 py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex unde incidunt soluta molestias voluptatum debitis, amet ipsa voluptates, quibusdam illum esse architecto temporibus porro quas, reprehenderit distinctio sunt fugit odio?</p>
+						<div class="text-center">
+							<a href="habitacion.html" class="btn btn-primary text-center d-block mx-auto">Separa tu habitación</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalLunaDeMiel" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title text-uppercase text-center">Luna de Miel</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+					</div>
+					<div class="modal-body">
+						<img src="img/luna-de-miel.png" class="img-fluid">
+						<p class="mb-0 py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex unde incidunt soluta molestias voluptatum debitis, amet ipsa voluptates, quibusdam illum esse architecto temporibus porro quas, reprehenderit distinctio sunt fugit odio?</p>
+						<div class="text-center">
+							<a href="habitacion.html" class="btn btn-primary text-center d-block mx-auto">Separa tu habitación</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalAventura" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title text-uppercase text-center">Aventura</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+					</div>
+					<div class="modal-body">
+						<img src="img/plan-aventura.png" class="img-fluid">
+						<p class="mb-0 py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex unde incidunt soluta molestias voluptatum debitis, amet ipsa voluptates, quibusdam illum esse architecto temporibus porro quas, reprehenderit distinctio sunt fugit odio?</p>
+						<div class="text-center">
+							<a href="habitacion.html" class="btn btn-primary text-center d-block mx-auto">Separa tu habitación</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalSpa" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title text-uppercase text-center">Spa</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+					</div>
+					<div class="modal-body">
+						<img src="img/plan-spa.png" class="img-fluid">
+						<p class="mb-0 py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex unde incidunt soluta molestias voluptatum debitis, amet ipsa voluptates, quibusdam illum esse architecto temporibus porro quas, reprehenderit distinctio sunt fugit odio?</p>
+						<div class="text-center">
+							<a href="habitacion.html" class="btn btn-primary text-center d-block mx-auto">Separa tu habitación</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- MODALES DE PLANES -->
+
+	<!-- RECORRIDO POR EL PUEBLO -->
+	<section id="recorridoPorElPueblo" class="recorridoPueblo mb-3">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12">
+					<h2 class="text-uppercase py-4 text-center tituloSeccion">Recorrido por el Pueblo</h2>
+				</div>
+				<div class="col-12">
+					<!-- Slider main container -->
+					<div class="swiper-container swiper-container-recorridoPueblo">
+						<!-- Additional required wrapper -->
+						<div class="swiper-wrapper">
+							<!-- Slides -->
+							<div class="swiper-slide">
+								<div class="row justify-content-center">
+									<div class="col-12 col-md-10">
+										<div class="contenedorGrid">
+											<div class="imagenChica">
+												<img src="img/pueblo01a.png" alt="" class="img-fluid">
+											</div>
+											<div class="imagenGrande">
+												<img src="img/pueblo01b.png" alt="" class="img-fluid">
+											</div>
+											<div class="descripcion">
+												<h3 class="tituloSeccion text-uppercase font-weight-light">Lorem, ipsum.</h3>
+												<p class="small text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae officiis mollitia, recusandae nesciunt quis minus?</p>
+											</div>
+										</div>
+									</div>
+								</div>			
+							</div>
+
+							<div class="swiper-slide">
+								<div class="row justify-content-center">
+									<div class="col-12 col-md-10">
+										<div class="contenedorGrid">
+											<div class="imagenChica">
+												<img src="img/pueblo02a.png" alt="" class="img-fluid">
+											</div>
+											<div class="imagenGrande">
+												<img src="img/pueblo02b.png" alt="" class="img-fluid">
+											</div>
+											<div class="descripcion">
+												<h3 class="tituloSeccion text-uppercase font-weight-light">Lorem, ipsum.</h3>
+												<p class="small text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae officiis mollitia, recusandae nesciunt quis minus?</p>
+											</div>
+										</div>
+									</div>
+								</div>			
+							</div>
+
+							<div class="swiper-slide">
+								<div class="row justify-content-center">
+									<div class="col-12 col-md-10">
+										<div class="contenedorGrid">
+											<div class="imagenChica">
+												<img src="img/pueblo03a.png" alt="" class="img-fluid">
+											</div>
+											<div class="imagenGrande">
+												<img src="img/pueblo03b.png" alt="" class="img-fluid">
+											</div>
+											<div class="descripcion">
+												<h3 class="tituloSeccion text-uppercase font-weight-light">Lorem, ipsum.</h3>
+												<p class="small text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae officiis mollitia, recusandae nesciunt quis minus?</p>
+											</div>
+										</div>
+									</div>
+								</div>			
+							</div>
+							
+						</div>
+						<!-- If we need pagination -->
+						<div class="swiper-pagination swiper-pagination-recorridoPueblo"></div>
+
+						<!-- If we need navigation buttons -->
+						<div class="swiper-button-prev prev-recorridoPueblo d-none d-md-block"></div>
+						<div class="swiper-button-next next-recorridoPueblo d-none d-md-block"></div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- RESTAURANTE -->
+	<section id="restauranteHotel" class="restaurante my-5">
+		<div class="parallax" data-parallax-image="img/restaurante.png"></div>
+		<div class="container-fluid h-100">
+			<div class="container h-100">
+				<div class="contenedor-grid h-100">
+					<div class="carta" data-modo="oculto">
+						<div class="menu m-sm-5">
+							<div class="item">
+								<img src="img/plato01.png" alt="Comida Hotel Portobelo">
+								<p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+							</div>
+							<div class="item">
+								<img src="img/plato02.png" alt="Comida Hotel Portobelo">
+								<p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+							</div>
+							<div class="item">
+								<img src="img/plato03.png" alt="Comida Hotel Portobelo">
+								<p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+							</div>
+							<div class="item">
+								<img src="img/plato04.png" alt="Comida Hotel Portobelo">
+								<p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+							</div>
+							<div class="item">
+								<img src="img/plato05.png" alt="Comida Hotel Portobelo">
+								<p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+							</div>
+							<div class="item">
+								<img src="img/plato06.png" alt="Comida Hotel Portobelo">
+								<p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+							</div>
+							<div class="volver text-center d-block d-lg-none">
+								<a href="#" class="btnVolver btn btn-warning text-uppercase btn-block">Volver</a>
+							</div>
+						</div>
+					</div>
+					<div class="tarjeta py-lg-3 px-lg-4 text-center">
+						<h2 class="text-uppercase text-white mt-5 pt-5 titulo">Restaurante</h2>
+						<p class="text-white my-5 py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quibusdam iste nihil illum doloribus, excepturi quis? Vero ipsam debitis voluptatibus modi quaerat, est esse, itaque voluptas omnis ad nulla laborum.</p>
+						<a href="#" id="btnVerCarta" class="btn btn-warning text-uppercase">Ver la carta</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CONTACTANOS -->
+	<section class="contactanos" id="contactoHotel">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="text-uppercase py-4 text-center tituloSeccion">Contactanos</h2>
+				</div>
+				<div class="col-12">
+					<form action="#" id="formularioContactanos">
+						<div class="row">
+							<div class="col-12 col-lg-6">
+								<div class="form-group">
+									<label for="contactanosNombre" class="sr-only">Nombre</label>
+									<input type="text" name="contactanosNombre" id="contactanosNombre" placeholder="Nombre" class="form-control form-control-lg">
+								</div>
+							</div>
+							<div class="col-12 col-lg-6">
+								<div class="form-group">
+									<label for="contactanosApellido" class="sr-only">Apellido</label>
+									<input type="text" name="contactanosApellido" id="contactanosApellido" placeholder="Apellido" class="form-control form-control-lg">
+								</div>
+							</div>
+							<div class="col-12 col-lg-6">
+								<div class="form-group">
+									<label for="contactanosMovil" class="sr-only">Movil</label>
+									<input type="text" name="contactanosMovil" id="contactanosMovil" placeholder="Movil" class="form-control form-control-lg">
+								</div>
+							</div>
+							<div class="col-12 col-lg-6">
+								<div class="form-group">
+									<label for="contactanosCorreoElectronico" class="sr-only">Correo Electronico</label>
+									<input type="email" name="contactanosCorreoElectronico" id="contactanosCorreoElectronico" placeholder="Correo Electronico" class="form-control form-control-lg">
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="form-group">
+									<label for="contactanosMensaje" class="sr-only">Mensaje</label>
+									<textarea name="contactanosMensaje" id="contactanosMensaje" rows="5" class="form-control form-control-lg" placeholder="Escribe aqui tu mensaje"></textarea>
+								</div>
+							</div>
+							<div class="col-12 col-md-4 offset-md-4">
+								<div class="form-group text-center">
+									<a href="#" class="btn btn-dark btn-block btn-lg">Enviar</a>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FLECHA SCROLL UP-->
+	<div>
+		<a href="#banner" id="scrollUp"></a>
+	</div>
+
+	<!-- PIE DE PAGINA -->
+	<footer class="pieDePagina mt-5">
+		<div class="container-fluid px-0">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2180611780914!2d-75.16167268529405!3d6.234961328180258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e441d2a2f90b049%3A0xe73c0a7060062903!2sHOTEL%20PORTOBELO%20GUATAPE!5e0!3m2!1ses!2sar!4v1590894341542!5m2!1ses!2sar" 
+			width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			<div class="visitanos d-none d-lg-block">
+				<h3>Visitanos</h3>
+				<p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, ipsum!</p>
+				<p class="mb-0">Apple inc.</p>
+				<p class="mb-0">Infinte Loop.</p>
+				<p class="mb-0">Cupertino, CA 95014</p>
+				<p>408-996-1010</p>
+				<p class="mb-0">Email: info@apple.com</p>
+				<p>Tel: 1-800-676-2775</p>
+			</div>
+			<div class="row footerInferior align-items-center justify-content-center py-3">
+				<div class="col-auto">
+					<p class="text-white text-center mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+				</div>
+				<div class="col-auto">
+					<ul class="list-unstyled mb-0 d-flex align-items-center justify-content-center">
+						<li class="mx-2"><a href="#"><i class="fab fa-facebook-f text-white lead"></i></a></li>
+						<li class="mx-2"><a href="#"><i class="fab fa-twitter text-white lead"></i></a></li>
+						<li class="mx-2"><a href="#"><i class="fab fa-youtube text-white lead"></i></a></li>
+						<li class="mx-2"><a href="#"><i class="fab fa-instagram text-white lead"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+ 
+<!--=====================================
+	VÍNCULOS JAVASCRIPT
+======================================-->
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+	<!-- datepicker -->
+	<script src="js/picker.js"></script>
+	<script src="js/picker.date.js"></script>
+
+	<!-- https://easings.net/es# -->
+	<script src="js/jquery.easing.js"></script>
+
+	<!-- jdSlider -->
+	<!-- https://www.jqueryscript.net/slider/Carousel-Slideshow-jdSlider.html -->
+	<script src="js/jquery.jdSlider-latest.js"></script>
+
+	<!-- Pano -->
+	<!-- https://www.jqueryscript.net/other/360-Degree-Panoramic-Image-Viewer-with-jQuery-Pano.html -->
+	<script src="js/jquery.pano.js"></script>
+
+	<!-- fullCalendar -->
+	<!-- https://momentjs.com/ -->
+	<script src="js/moment.js"></script>
+	<!-- https://fullcalendar.io/docs/background-events-demo -->	
+	<script src="js/fullcalendar.min.js"></script>
+	
+	<!-- SWIPER - PARA EL SLIDER DE IMAGENES -->
+	<script src="js/swiper.min.js"></script>
+	
+	<!-- UNIVERSAL PARALLAX -->
+	<script src="js/universal-parallax.js"></script>
+	
+    <!-- Scripts Propios-->
+    <script src="js/script.js"></script>
+	
+</body>
+</html>
