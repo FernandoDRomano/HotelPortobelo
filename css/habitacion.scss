@@ -132,3 +132,110 @@
         }
     }
 }
+
+/*============================================
+                MEDIAS QUERYS
+============================================*/
+
+@media(max-width:991px){
+    .contenidoPrincipalHabitacion{
+
+        .contenidoCentral {
+            margin-top: 0rem;
+        }
+
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 1.8rem;
+            padding: 1rem;
+        }
+    
+        .contenidoCentral{
+            .multimediaHabitacion{
+                overflow: hidden;
+            }
+    
+        }
+    
+        .contenidoLateralDerecho{
+            margin-top: 0rem!important;
+        }
+    }
+}
+
+@media(max-width:767px){
+    .contenidoPrincipalHabitacion{
+
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 1.5rem;
+            padding: .7rem;
+        }
+
+        .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+            right: 0px;
+        }
+
+        .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+            right: 0px;
+        }
+    
+        .contenidoCentral{
+            margin-top: 0rem;
+            .multimediaHabitacion{
+                overflow: hidden;
+            }
+    
+            .botonesMultimedia {
+                .tituloHabitacion {
+                    font-size: 1.8rem;
+                }
+
+                .botonMultimedia {
+                    padding: 0.7rem;
+                }
+            }
+        }
+    
+        .contenidoLateralDerecho{
+            margin-top: 0rem!important;
+        }
+    }
+}
+
+@media(max-width:575px){
+    .contenidoPrincipalHabitacion{
+
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 1.5rem;
+            padding: .7rem;
+        }
+
+        .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+            right: 0px;
+        }
+
+        .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+            right: 0px;
+        }
+    
+        .contenidoCentral{
+            margin-top: 0rem;
+            .multimediaHabitacion{
+                margin-top:4rem;
+            }
+    
+            .botonesMultimedia {
+                .tituloHabitacion {
+                    font-size: 1.8rem;
+                }
+
+                .botonMultimedia {
+                    padding: 0.7rem;
+                }
+            }
+        }
+    
+        .contenidoLateralDerecho{
+            margin-top: 0rem!important;
+        }
+    }
+}

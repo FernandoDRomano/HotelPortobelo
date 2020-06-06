@@ -110,4 +110,77 @@
   width: 10%;
 }
 
+/*============================================
+                MEDIAS QUERYS
+============================================*/
+@media (max-width: 991px) {
+  .contenidoPrincipalHabitacion .contenidoCentral {
+    margin-top: 0rem;
+  }
+  .contenidoPrincipalHabitacion .swiper-button-next:after, .contenidoPrincipalHabitacion .swiper-button-prev:after {
+    font-size: 1.8rem;
+    padding: 1rem;
+  }
+  .contenidoPrincipalHabitacion .contenidoCentral .multimediaHabitacion {
+    overflow: hidden;
+  }
+  .contenidoPrincipalHabitacion .contenidoLateralDerecho {
+    margin-top: 0rem !important;
+  }
+}
+@media (max-width: 767px) {
+  .contenidoPrincipalHabitacion .swiper-button-next:after, .contenidoPrincipalHabitacion .swiper-button-prev:after {
+    font-size: 1.5rem;
+    padding: 0.7rem;
+  }
+  .contenidoPrincipalHabitacion .swiper-button-next, .contenidoPrincipalHabitacion .swiper-container-rtl .swiper-button-prev {
+    right: 0px;
+  }
+  .contenidoPrincipalHabitacion .swiper-button-next, .contenidoPrincipalHabitacion .swiper-container-rtl .swiper-button-prev {
+    right: 0px;
+  }
+  .contenidoPrincipalHabitacion .contenidoCentral {
+    margin-top: 0rem;
+  }
+  .contenidoPrincipalHabitacion .contenidoCentral .multimediaHabitacion {
+    overflow: hidden;
+  }
+  .contenidoPrincipalHabitacion .contenidoCentral .botonesMultimedia .tituloHabitacion {
+    font-size: 1.8rem;
+  }
+  .contenidoPrincipalHabitacion .contenidoCentral .botonesMultimedia .botonMultimedia {
+    padding: 0.7rem;
+  }
+  .contenidoPrincipalHabitacion .contenidoLateralDerecho {
+    margin-top: 0rem !important;
+  }
+}
+@media (max-width: 575px) {
+  .contenidoPrincipalHabitacion .swiper-button-next:after, .contenidoPrincipalHabitacion .swiper-button-prev:after {
+    font-size: 1.5rem;
+    padding: 0.7rem;
+  }
+  .contenidoPrincipalHabitacion .swiper-button-next, .contenidoPrincipalHabitacion .swiper-container-rtl .swiper-button-prev {
+    right: 0px;
+  }
+  .contenidoPrincipalHabitacion .swiper-button-next, .contenidoPrincipalHabitacion .swiper-container-rtl .swiper-button-prev {
+    right: 0px;
+  }
+  .contenidoPrincipalHabitacion .contenidoCentral {
+    margin-top: 0rem;
+  }
+  .contenidoPrincipalHabitacion .contenidoCentral .multimediaHabitacion {
+    margin-top: 4rem;
+  }
+  .contenidoPrincipalHabitacion .contenidoCentral .botonesMultimedia .tituloHabitacion {
+    font-size: 1.8rem;
+  }
+  .contenidoPrincipalHabitacion .contenidoCentral .botonesMultimedia .botonMultimedia {
+    padding: 0.7rem;
+  }
+  .contenidoPrincipalHabitacion .contenidoLateralDerecho {
+    margin-top: 0rem !important;
+  }
+}
+
 /*# sourceMappingURL=habitacion.css.map */
