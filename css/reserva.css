@@ -1,0 +1,41 @@
+.contenidoCentral .verTusReservas {
+  color: #FFCC29 !important;
+  font-size: 1rem !important;
+}
+.contenidoCentral .calendarioGrande {
+  margin-top: 3.5rem;
+}
+.contenidoCentral .calendarioGrande .bg-marron {
+  color: #847059;
+}
+.contenidoCentral .calendarioGrande .bg-amarillo {
+  color: #FFCC29;
+}
+.contenidoCentral .calendarioGrande .bg-gris {
+  color: #EEEEEE;
+}
+
+.contenidoLateralDerecho .datosReserva .codigoReserva {
+  color: #847059;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.contenidoLateralDerecho .datosReserva .precioFinalHabitacion {
+  font-size: 2.3rem;
+}
+
+/*============================================
+                MEDIAS QUERYS
+============================================*/
+@media (max-width: 991px) {
+  .contenidoCentral .calendarioGrande {
+    margin-top: 5.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .contenidoCentral .calendarioGrande {
+    margin-top: 4.5rem;
+  }
+}
+
+/*# sourceMappingURL=reserva.css.map */

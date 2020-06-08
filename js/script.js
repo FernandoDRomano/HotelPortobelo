@@ -217,28 +217,30 @@ let btnVolver = document.querySelector('.restaurante .btnVolver');
 let carta = document.querySelector('.restaurante .carta');
 let tarjeta = document.querySelector('.restaurante .tarjeta');
 
-btnVerCarta.addEventListener('click', (e)=>{
-    e.preventDefault();
-    let anchoPantalla = screen.width;
-    if(anchoPantalla < 992){
-        tarjeta.style.display = 'none';
-        carta.classList.replace('carta', 'cartaMovil');
-    }else{
-        if(carta.getAttribute('data-modo') == "oculto"){
-            carta.style.opacity = 1;
-            carta.setAttribute('data-modo', 'visible');
+if (btnVerCarta) {
+    btnVerCarta.addEventListener('click', (e)=>{
+        e.preventDefault();
+        let anchoPantalla = screen.width;
+        if(anchoPantalla < 992){
+            tarjeta.style.display = 'none';
+            carta.classList.replace('carta', 'cartaMovil');
         }else{
-            carta.style.opacity = 0;
-            carta.setAttribute('data-modo', 'oculto');
+            if(carta.getAttribute('data-modo') == "oculto"){
+                carta.style.opacity = 1;
+                carta.setAttribute('data-modo', 'visible');
+            }else{
+                carta.style.opacity = 0;
+                carta.setAttribute('data-modo', 'oculto');
+            }
         }
-    }
-});
-
-btnVolver.addEventListener('click', (e)=>{
-    e.preventDefault();
-    carta.classList.replace('cartaMovil', 'carta');
-    tarjeta.style.display = 'block';
-});
+    });
+    
+    btnVolver.addEventListener('click', (e)=>{
+        e.preventDefault();
+        carta.classList.replace('cartaMovil', 'carta');
+        tarjeta.style.display = 'block';
+    });
+}
 
 //CONFIGURANDO LOS INPUTS DEL FORMULARIO CONTACTANOS
 let nombre = document.getElementById('contactanosNombre');
@@ -253,8 +255,6 @@ if (screen.width < 576) {
     movil.classList.remove('form-control-lg');
     mensaje.classList.remove('form-control-lg');
     correo.classList.remove('form-control-lg');
-} else {
-    
 }
 
 /*
@@ -317,26 +317,32 @@ function ocultarImagen360(){
     imagen360.classList.replace('d-block', 'd-none');
 }
 
-btnFoto.addEventListener('click', (e)=>{
-    e.preventDefault();
-    ocultarVideo();
-    ocultarImagen360();
-    mostrarSliderDeImagenes();
-});
+if (btnFoto) {
+    btnFoto.addEventListener('click', (e)=>{
+        e.preventDefault();
+        ocultarVideo();
+        ocultarImagen360();
+        mostrarSliderDeImagenes();
+    });
+}
 
-btnVideo.addEventListener('click', (e)=>{
-    e.preventDefault();
-    ocultarSliderDeImagenes();
-    ocultarImagen360();
-    mostrarVideo();
-});
+if (btnVideo) {
+    btnVideo.addEventListener('click', (e)=>{
+        e.preventDefault();
+        ocultarSliderDeImagenes();
+        ocultarImagen360();
+        mostrarVideo();
+    });
+}
 
-btn360.addEventListener('click', (e)=>{
-    e.preventDefault();
-    ocultarSliderDeImagenes();
-    ocultarVideo();
-    mostrarImagen360();
-});
+if (btn360) {
+    btn360.addEventListener('click', (e)=>{
+        e.preventDefault();
+        ocultarSliderDeImagenes();
+        ocultarVideo();
+        mostrarImagen360();
+    });
+}
 
 //CONFIGURACIÓN DEL DESPLIEGUE DE LA SEGUNDA COLUMNA DE LA PAGINA HABITACION.HTML
 let columna = document.querySelector('.contenidoPrincipalHabitacion .contenidoLateralDerecho');
@@ -496,4 +502,32 @@ new universalParallax().init({
 
 $("#myPano").pano({
 	img: "img/360.jpg"
+});
+
+/*
+    CONFIGURACIÓN DE FULL CALENDAR
+*/
+
+$('#calendar').fullCalendar({
+	header: {
+    	left: 'prev',
+    	center: 'title',
+    	right: 'next'
+  },
+  events: [
+    {
+      start: '2019-03-12',
+      end: '2019-03-15',
+      rendering: 'background',
+      color: '#847059'
+    },
+    {
+      start: '2019-03-22',
+      end: '2019-03-24',
+      rendering: 'background',
+      color: '#FFCC29'
+    }  
+  ]
+
+
 });
