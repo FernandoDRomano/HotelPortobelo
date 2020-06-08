@@ -348,7 +348,9 @@ if (btn360) {
 let columna = document.querySelector('.contenidoPrincipalHabitacion .contenidoLateralDerecho');
 
 function bajarColumnaLateralDerecha(){
-    columna.style.marginTop = '3rem';
+   if(columna){
+	columna.style.marginTop = '3rem';
+    }
 }
 
 bajarColumnaLateralDerecha();
